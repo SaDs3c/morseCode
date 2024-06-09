@@ -8,3 +8,5 @@ require (
 )
 
 require github.com/go-audio/riff v1.0.0 // indirect
+
+replace github.com/sads3c/morseCode => github.com/SaDs3c/morseCode v0.0.0-20240609231808-a153e126430e
