@@ -106,7 +106,7 @@ func main() {
 		return
 	}
 
-	filename := *output
+	filename := *output + ".wav"
 	if filename == "" {
 		filename = "morse_output.wav"
 	}
