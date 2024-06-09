@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"math"
 	"os"
@@ -91,7 +92,24 @@ func textToMorseAudio(text, filename string) {
 }
 
 func main() {
-	textInput := "WEB3"
-	filename := strings.ReplaceAll(textInput, " ", "_") + ".wav"
-	textToMorseAudio(textInput, filename)
+	text := flag.String("t", "", "Input text to convert to Morse code")
+	output := flag.String("o", "morse_output.wav", "Output filename for the Morse code audio")
+	help := flag.Bool("h", false, "Show usage information")
+
+	flag.Parse()
+
+	if *help || *text == "" {
+		fmt.Println("Usage: morsecode -t \"TEXT\" [-o output.wav]")
+		fmt.Println("  -t  Input text to convert to Morse code")
+		fmt.Println("  -o  Output filename for the Morse code audio (default: morse_output.wav)")
+		fmt.Println("  -h  Show usage information")
+		return
+	}
+
+	filename := *output
+	if filename == "" {
+		filename = "morse_output.wav"
+	}
+
+	textToMorseAudio(*text, filename)
 }
