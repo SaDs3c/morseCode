@@ -88,7 +88,9 @@ func textToMorseAudio(text, filename string) {
 		panic(err)
 	}
 
-	fmt.Printf("Saved Morse code audio to %s\n", filename)
+	fmt.Printf("Message to encode: %s\n", text)
+	fmt.Printf("Message in Morse code encode: %s\n", morseCode)
+	fmt.Printf("Generated audio morse code to %s\n", filename)
 }
 
 func main() {
