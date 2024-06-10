@@ -1,4 +1,4 @@
-module github.com/sads3c/morseCode
+module github.com/SaDs3c/morseCode
 
 go 1.22.2
 
@@ -8,5 +8,3 @@ require (
 )
 
 require github.com/go-audio/riff v1.0.0 // indirect
-
-replace github.com/sads3c/morseCode => github.com/SaDs3c/morseCode
